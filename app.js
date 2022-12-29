@@ -6,10 +6,33 @@
 //     }
 // }
 
-let count = 0;
-while (count < 10) {
-    count++;
+// let count = 0;
+// while (count < 10) {
+//     count++;
     
-    console.log(count);
+//     console.log(count);
     
+// }
+
+// Guessing Game:
+
+const answer = Math.floor(Math.random() * 100) + 1;
+console.log(answer);
+
+let input = parseInt(prompt("Guess my number between 1 and 100"));
+let numGuesses = 1;
+
+while (input !== answer)
+{
+    if (input > answer)
+    {
+        input = prompt("Your guess was too high. Try again: ");
+    }
+    else if (input < answer)
+    {
+        input = prompt("Your guess was too low. Try again: ");
+    } 
+    numGuesses++;
 }
+
+console.log(`Correct! You guessed ${numGuesses} times`);
