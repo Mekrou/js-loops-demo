@@ -60,3 +60,35 @@ for (let row of seatingChart) {
         console.log(student);
     }
 }
+
+// we can use any iterable object, such as a string
+
+const hero = 'Sombra';
+
+for (let letter of hero)
+{
+    console.log(letter);
+}
+
+// Okay... but in JS normal objects are not iterable
+
+const testScores = {
+    keenan: 90,
+    daemon: 100,
+    brian: 0,
+    endo: 1000,
+}
+
+// To iterate over a standard object (key: value,) we use a for in loop.
+for (let person in testScores) {
+    console.log(`Person ${person} scored: ${testScores[person]}`);
+}
+
+let sumOfScores = 0;
+let numScores = 0;
+for (let personScore of Object.values(testScores)) {
+    sumOfScores += personScore;
+    console.log(personScore);
+    numScores++;
+}
+console.log(`Scores average: ${sumOfScores / numScores}`);
